@@ -29,7 +29,7 @@ class TuraContainerFormatter {
     return [for (final d in formatters) d.factoryLine].toSet();
   }
 
-  String get header => 'class TuraContainer {';
+  String get header => 'class TuraContainerBox {';
   String get footer => '}';
 
   String get constructor {
