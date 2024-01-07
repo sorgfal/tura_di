@@ -18,13 +18,7 @@ class TuraDependableFormatter {
       );
 
     return params
-        .map((e) {
-          if (e.isNamed) {
-            return '${e.name}:get${e.type}';
-          } else {
-            return 'get${e.type}';
-          }
-        })
+        .map((e) => e.isNamed ? '${e.name}:get${e.type}' : 'get${e.type}')
         .join(',')
         .toString();
   }
