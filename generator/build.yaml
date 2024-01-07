@@ -1,0 +1,19 @@
+targets:
+  $default:
+    builders:
+      generator|generator:
+        enabled: true
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - type=lint
+
+builders:
+  generator:
+    target: ":"
+    import: "package:generator/builder.dart"
+    builder_factories: ["generateFactories", "generateInitializer"]
+    build_extensions: { ".dart": [".fct.dart"] }
+    auto_apply: root_package
+    build_to: source
+    applies_builders: ["source_gen:combining_builder"]
