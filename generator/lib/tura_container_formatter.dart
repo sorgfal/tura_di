@@ -42,7 +42,7 @@ class TuraContainerFormatter {
       if (!eagerCalls.endsWith(';')) {
         eagerCalls = '$eagerCalls;';
       }
-      return 'TuraContainer(){$eagerCalls}';
+      return 'TuraContainerBox(){$eagerCalls}';
     }
   }
 }
